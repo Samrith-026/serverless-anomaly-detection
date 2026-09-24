@@ -42,6 +42,27 @@ The demo submits five stable latency values followed by a spike. Inspect the API
 | `GET` | `/metrics` | Recent bounded observation history |
 | `GET` | `/alerts` | Recent detected anomalies |
 
+### Actual local output
+
+The local run used five stable observations followed by a `250 ms` latency spike. The detector returned these results:
+
+```text
+value=100 anomaly=False
+value=101 anomaly=False
+value=99 anomaly=False
+value=100 anomaly=False
+value=100 anomaly=False
+value=250 anomaly=True
+
+state=ALARM
+reason=250.0 is outside [98.735, 101.265]
+metric=PipelineLatency
+dimension=Service:orders
+baseline_samples=5
+```
+
+This is output from the repository's local detector using synthetic sample values; the architecture image above illustrates the separate AWS path.
+
 Example observation:
 
 ```bash
