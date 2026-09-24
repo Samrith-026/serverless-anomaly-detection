@@ -1,0 +1,8 @@
+aws_region           = "us-east-1"
+name_prefix          = "anomaly-poc"
+metric_namespace     = "Portfolio/Operations"
+metric_name          = "PipelineLatency"
+metric_unit          = "Milliseconds"
+service_dimension    = "orders"
+anomaly_band_width   = 2
+notification_email   = ""

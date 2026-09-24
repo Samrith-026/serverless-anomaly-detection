@@ -1,0 +1,17 @@
+{
+  "version": "0",
+  "id": "11111111-2222-3333-4444-555555555555",
+  "detail-type": "CloudWatch Alarm State Change",
+  "source": "aws.cloudwatch",
+  "account": "123456789012",
+  "time": "2026-09-10T18:45:00Z",
+  "region": "us-east-1",
+  "detail": {
+    "alarmName": "anomaly-poc-PipelineLatency-anomaly",
+    "state": {
+      "value": "ALARM",
+      "reason": "Threshold crossed: value was outside the expected anomaly band",
+      "timestamp": "2026-09-10T18:44:48Z"
+    }
+  }
+}
