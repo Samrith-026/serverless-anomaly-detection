@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Serverless anomaly detector actual local output</title>
+  <desc id="desc">The local simulator learned five stable latency samples and raised an alarm for a synthetic 250 millisecond observation.</desc>
+  <rect width="1200" height="650" rx="20" fill="#0b1115"/>
+  <rect x="1" y="1" width="1198" height="58" rx="19" fill="#182329"/>
+  <circle cx="30" cy="30" r="7" fill="#ff6b63"/><circle cx="54" cy="30" r="7" fill="#ffc04f"/><circle cx="78" cy="30" r="7" fill="#36c98f"/>
+  <text x="108" y="37" fill="#dbe6e8" font-family="Consolas,monospace" font-size="18">serverless-anomaly-detection · local demo</text>
+  <text x="76" y="104" fill="#84a4aa" font-family="Consolas,monospace" font-size="15" letter-spacing="2">ACTUAL LOCAL OUTPUT · SYNTHETIC INPUT</text>
+  <text x="76" y="151" fill="#9cdbb5" font-family="Consolas,monospace" font-size="18">value=100 anomaly=False</text>
+  <text x="76" y="188" fill="#9cdbb5" font-family="Consolas,monospace" font-size="18">value=101 anomaly=False</text>
+  <text x="76" y="225" fill="#9cdbb5" font-family="Consolas,monospace" font-size="18">value=99  anomaly=False</text>
+  <text x="76" y="262" fill="#9cdbb5" font-family="Consolas,monospace" font-size="18">value=100 anomaly=False</text>
+  <text x="76" y="299" fill="#9cdbb5" font-family="Consolas,monospace" font-size="18">value=100 anomaly=False</text>
+  <rect x="702" y="130" width="420" height="190" rx="16" fill="#281a1b" stroke="#9d4e58" stroke-width="2"/>
+  <text x="742" y="178" fill="#df999e" font-family="Consolas,monospace" font-size="15" letter-spacing="2">SPIKE DETECTED</text>
+  <text x="742" y="241" fill="#fff0ee" font-family="Consolas,monospace" font-size="42" font-weight="700">250 ms</text>
+  <text x="742" y="284" fill="#f2a5a9" font-family="Consolas,monospace" font-size="20">anomaly=True</text>
+  <line x1="76" y1="350" x2="1124" y2="350" stroke="#314149" stroke-width="2"/>
+  <text x="76" y="404" fill="#f2a277" font-family="Consolas,monospace" font-size="24" font-weight="700">state=ALARM</text>
+  <text x="76" y="451" fill="#d0dadd" font-family="Consolas,monospace" font-size="19">reason=250.0 is outside [98.735, 101.265]</text>
+  <text x="76" y="495" fill="#b9c8cc" font-family="Consolas,monospace" font-size="18">metric=PipelineLatency</text>
+  <text x="76" y="532" fill="#b9c8cc" font-family="Consolas,monospace" font-size="18">dimension=Service:orders</text>
+  <text x="76" y="569" fill="#b9c8cc" font-family="Consolas,monospace" font-size="18">baseline_samples=5</text>
+  <text x="76" y="618" fill="#7f979d" font-family="Consolas,monospace" font-size="15">Local rolling-baseline simulator · no AWS account required</text>
+</svg>

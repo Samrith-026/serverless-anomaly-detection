@@ -44,6 +44,8 @@ The demo submits five stable latency values followed by a spike. Inspect the API
 
 ### Actual local output
 
+![Image preview of the local anomaly detector output from synthetic latency samples](docs/images/actual-output.svg)
+
 The local run used five stable observations followed by a `250 ms` latency spike. The detector returned these results:
 
 ```text
