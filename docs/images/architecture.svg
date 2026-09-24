@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Serverless CloudWatch anomaly detection architecture</title>
+  <desc id="desc">A workload sends custom metrics to a publisher Lambda and CloudWatch. A learned-band alarm triggers EventBridge, which invokes a router Lambda and sends alerts to encrypted SNS. Failed event deliveries go to an encrypted SQS dead-letter queue.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#7892ad"/></marker>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#101d2c"/><stop offset="1" stop-color="#0b1420"/></linearGradient>
+    <style>text{font-family:Arial,sans-serif}.box{fill:#172a3d;stroke:#395674;stroke-width:2}.cloud{fill:#173b3c;stroke:#4bc4a6}.compute{fill:#293151;stroke:#8f9aff}.alert{fill:#3b2b20;stroke:#dda35e}.label{fill:#eff5fb;font-size:20px;font-weight:700}.small{fill:#aabbd0;font-size:14px}.path{fill:none;stroke:#7892ad;stroke-width:3;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="620" rx="28" fill="url(#bg)"/>
+  <text x="56" y="62" fill="#f5f8fc" font-size="27" font-weight="700">SERVERLESS CLOUDWATCH ANOMALY DETECTION</text>
+  <text x="56" y="92" fill="#9fb0c3" font-size="15">Metric ingestion · learned-band alarms · resilient event routing</text>
+  <rect class="box" x="45" y="210" width="145" height="105" rx="16"/><text class="label" x="117" y="255" text-anchor="middle">Workload</text><text class="small" x="117" y="283" text-anchor="middle">custom metric</text>
+  <rect class="compute" x="245" y="190" width="190" height="145" rx="16"/><text class="label" x="340" y="242" text-anchor="middle">Publisher</text><text class="small" x="340" y="271" text-anchor="middle">Lambda · validation</text><text class="small" x="340" y="296" text-anchor="middle">PutMetricData</text>
+  <rect class="cloud" x="490" y="190" width="210" height="145" rx="16"/><text class="label" x="595" y="242" text-anchor="middle">CloudWatch</text><text class="small" x="595" y="271" text-anchor="middle">custom metric</text><text class="small" x="595" y="296" text-anchor="middle">anomaly-band alarm</text>
+  <rect class="box" x="755" y="190" width="175" height="145" rx="16"/><text class="label" x="842" y="242" text-anchor="middle">EventBridge</text><text class="small" x="842" y="271" text-anchor="middle">ALARM events</text><text class="small" x="842" y="296" text-anchor="middle">retry policy</text>
+  <rect class="compute" x="985" y="190" width="170" height="145" rx="16"/><text class="label" x="1070" y="242" text-anchor="middle">Router</text><text class="small" x="1070" y="271" text-anchor="middle">Lambda · enrich</text><text class="small" x="1070" y="296" text-anchor="middle">publish</text>
+  <path class="path" d="M190 263H237"/><path class="path" d="M435 263H482"/><path class="path" d="M700 263H747"/><path class="path" d="M930 263H977"/>
+  <rect class="alert" x="515" y="410" width="230" height="110" rx="16"/><text class="label" x="630" y="455" text-anchor="middle">Encrypted SQS DLQ</text><text class="small" x="630" y="484" text-anchor="middle">failed event delivery</text>
+  <rect class="cloud" x="900" y="410" width="230" height="110" rx="16"/><text class="label" x="1015" y="455" text-anchor="middle">Encrypted SNS</text><text class="small" x="1015" y="484" text-anchor="middle">email / alert integrations</text>
+  <path d="M842 335V380H745" class="path"/><path class="path" d="M1070 335V402"/>
+  <text x="58" y="575" fill="#879bb1" font-size="14">Terraform also configures scoped IAM, CloudWatch dashboard, logs, and Lambda concurrency limits.</text>
+</svg>

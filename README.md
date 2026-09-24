@@ -8,17 +8,7 @@ A testable observability project with two execution paths: a dependency-free loc
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    W[Workload] --> P[Metric publisher Lambda]
-    P --> CW[CloudWatch custom metric]
-    CW --> A[Anomaly detection alarm]
-    A --> EB[EventBridge rule]
-    EB --> R[Alarm router Lambda]
-    R --> SNS[Encrypted SNS topic]
-    EB -. failed delivery .-> DLQ[SQS dead-letter queue]
-    SNS --> O[Email or incident tooling]
-```
+![Architecture preview: CloudWatch anomaly detection from metric publication through EventBridge and Lambda to encrypted SNS, with SQS dead-letter handling](docs/images/architecture.svg)
 
 The CloudWatch alarm evaluates a learned band over two consecutive one-minute periods. EventBridge forwards only `ALARM` transitions, retries transient failures, and stores exhausted deliveries in an encrypted SQS queue for investigation.
 
@@ -119,4 +109,3 @@ RUNBOOK.md            Triage, recovery, tuning, and failure procedures
 ```
 
 See [RUNBOOK.md](./RUNBOOK.md) before operating the AWS path.
-
